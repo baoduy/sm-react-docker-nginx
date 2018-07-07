@@ -7,4 +7,5 @@ tests
 .gitattributes
 .gitignore
 README.md
-tools/service-fabric
+sm-react-iis
+sm-react-service-fabric
