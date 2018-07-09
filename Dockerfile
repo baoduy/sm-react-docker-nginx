@@ -14,6 +14,9 @@ WORKDIR /app
 #Copy the required files from Build.
 COPY --from=0 /app/dist ./
 COPY --from=0 /app/sm-react-docker-nginx/default.conf /etc/nginx/conf.d/
+#Copy SSL file
+COPY --from=0 /app/sm-react-docker-nginx/certs/cert.pem /etc/ssl/cert.pem
+COPY --from=0 /app/sm-react-docker-nginx/certs/key.pem /etc/ssl/key.pem
 
 #Environment variables
 ENV PORT=80
