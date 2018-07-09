@@ -13,10 +13,14 @@ WORKDIR /app
 #WORKDIR /var/www
 #Copy the required files from Build.
 COPY --from=0 /app/dist ./
-COPY --from=0 /app/tools/docker/default.conf /etc/nginx/conf.d/
+COPY --from=0 /app/sm-react-docker-nginx/default.conf /etc/nginx/conf.d/
+
+#Environment variables
+ENV PORT=80
+ENV PORT_SSL=443
 
 #Expose the port.
-EXPOSE 80:443
+EXPOSE ${PORT}:${PORT_SSL}
 
 #The endpoint of Image.
 #The NOTE from https://hub.docker.com/_/nginx/
