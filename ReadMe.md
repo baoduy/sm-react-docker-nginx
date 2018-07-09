@@ -12,3 +12,7 @@ This is subd module contains the Dockerfile to build and host React app as stati
 
 The application will running port 3000 in Docker.
 The image can be found in Docker hub [here](https://hub.docker.com/r/baoduy2412/react-materialui-started-kit/).
+
+## SSL Support
+
+The nginx will load the SSL cert from certs folder and host the side at port 443.
